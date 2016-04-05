@@ -1,0 +1,18 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Webcam Photo</title>
+        <script type="text/javascript" src="/static/webcam/django-webcam.js" charset="utf-8"></script>
+        <script type="text/javascript" src="/static/webcam/django-webcam.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="/static/webcam/jquery-1.7.2.min.js" charset="utf-8"></script>
+        <script type="text/javascript" src="/static/webcam/jquery.django-webcam.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <h1>Webcam</h1>
+        <form action="." method="post">
+                {% csrf_token %}
+                {{form.camera}}
+            <input type="submit" value="Save Photo" name="save"/>
+        </form>
+    </body>
+</html>
