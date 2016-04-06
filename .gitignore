@@ -60,3 +60,12 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# sqllite
+db.sqlite3
+
+# tilda files
+*~
+
+# ignore media directory
+webcam/media/images/
