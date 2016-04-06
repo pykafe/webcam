@@ -17,11 +17,13 @@ from django.conf.urls import include, url
 from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
-from webcamapp.views import WebcamPhoto
+from webcamapp.views import WebcamPhoto, PhotoUpdate, PhotoDelete
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', WebcamPhoto.as_view(), name='camera')
+    url(r'^$', WebcamPhoto.as_view(), name='camera'),
+    url(r'^edit/(?P<pk>\d+)/$', PhotoUpdate.as_view(), name='edit'),
+    url(r'^delete/(?P<pk>\d+)/$', PhotoDelete.as_view(), name='delete')
 ]
 
 if settings.DEBUG:

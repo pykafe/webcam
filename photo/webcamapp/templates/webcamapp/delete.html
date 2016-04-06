@@ -20,21 +20,21 @@
 
     <body>
 
-        <h1><a href="{% static 'webcam/jscam.swf' %}"/>Webcam</a></h1>
+        <h1>Delete Webcam</h1>
 
         <form action="." method="post" enctype="multipart/form-data">
             {% csrf_token %}
-                {{form.picture}}
-            <input type="submit" value="Save Photo" name="save"/>
+            <h3>
+                Are you sure You want to delete this photo
+                {% for takephoto in cameras %}
+                     <img src="{{MEDIA_URL}}{{takephoto.picture}}" width=70 height=70 />
+                {% endfor %}
+            </h3>
+            <br>
+            <input type="submit" value="Delete" name="delete"/>
         </form>
 
-        <br>
-
-        {% for takephoto in cameras %}
-            <img src="{{MEDIA_URL}}{{takephoto.picture}}" width=100 height=100 />
-            |<a href="{% url 'edit' takephoto.id %}">Edit</a>|
-            |<a href="{% url 'delete' takephoto.id %}">Delete</a>|
-        {% endfor %}
+            <button><a href="{% url 'camera' %}">No</a></button>
 
     </body>
 </html>
