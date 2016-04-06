@@ -62,7 +62,7 @@ target/
 .ipynb_checkpoints
 
 # sqllite
-db.sqlite3
+photo/db.sqlite3
 
 # tilda files
 *~
